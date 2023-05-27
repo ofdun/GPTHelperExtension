@@ -1,15 +1,16 @@
 chrome.runtime.onInstalled.addListener(() => {
-    chrome.contextMenus.create({
-      id: "myContextMenu",
-      title: "My Extension",
-      contexts: ["selection"],
+  chrome.contextMenus.create({
+    id: "askGPT",
+    title: "Ask GPT",
+    contexts: ["selection"],
+  });
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  const selected_text = info.selectionText;
+  if (info.menuItemId === "askGPT") {
+    chrome.tabs.create({
+      url: `popup.html`,
     });
-  });
-  
-  chrome.contextMenus.onClicked.addListener((info, tab) => {
-    if (info.menuItemId === "myContextMenu") {
-      const selectedText = info.selectionText;
-      chrome.tabs.sendMessage(tab.id, { text: selectedText });
-    }
-  });
-  
+  }
+});
