@@ -61,7 +61,7 @@ async function get_answer(api_key) {
     const endpoint = "https://api.openai.com/v1/completions";
     const headers = {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${api_key.slice(1, -1)}` , // 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
+      Authorization: `Bearer ${api_key.slice(1, -1)}` ,
     };
 
     const data = {
