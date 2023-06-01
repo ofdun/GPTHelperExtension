@@ -1,0 +1,21 @@
+html, body {
+    background-color: #343541;
+    color: aliceblue;
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+input, button {
+    display: block;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px
+}
