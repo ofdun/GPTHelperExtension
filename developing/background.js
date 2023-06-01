@@ -11,7 +11,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   save_to_storage(selected_text);
   if (info.menuItemId === "askGPT") {
     chrome.tabs.create({
-      url: `popup.html`,
+      url: `site/index.html`,
     });
   };
 });
